@@ -1,42 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
 function App() {
-  const classes = [
-    { name: "HTML" , finished : true},
-    { name : "JavaScript" , finished : false},
-    { name: 'CSS', finished: true},
-    { name: 'BootStrap', finished: false},
-    { name: "React", finished: true},
-    { name: "Python", finished: false},
-  ];
+  const [count, setCount] = useState(0);
   return (
-    <div>{classes.map(( value, index) =>{
-      return value.finished && <Courses key={index} name={value.name} finished={ value.finished} ></Courses>
-
-    })}</div>
-
+    <div>
+      <button onClick={()=> setCount(count+1)}>increase</button>
+      <button onClick={()=> setCount(count-1)}>decrease</button>
+      <button onClick={()=> setCount(0)}>set to 0</button>
+      <h1>{count}</h1>
+    </div>
   )
 }
  
-const Courses = (props) =>{
-  return(
-    <div>
-      <h2>{props.name}</h2>
-      <p>{props.finished}</p>
-    </div>
-  );
-}
-// const JObComponent = (props) =>{
-//   return(
-//    <div>
-//     <h1>${props.salary}</h1>
-//     <h2>{props.position}</h2>
-//     <p>{props.company}</p>
-//    </div> 
-//   );
-// }
-
-
-
 export default App;
