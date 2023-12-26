@@ -1,14 +1,26 @@
+import {useState} from "react"
 import './App.css';
-import {useState} from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [courseList, setCourseList] = useState([]);
+  const [newCourse, setNewCourse] = useState("");
+  const handelChange = (event) =>{
+    setNewCourse(event.target.value);
+  }
+  const addcourse = ()=> {
+    setCourseList([...courseList, newCourse]);
+  }
   return (
-    <div>
-      <button onClick={()=> setCount(count+1)}>increase</button>
-      <button onClick={()=> setCount(count-1)}>decrease</button>
-      <button onClick={()=> setCount(0)}>set to 0</button>
-      <h1>{count}</h1>
+    <div className='App'>
+      <div className='add-course'>
+        <input type='text' onChange={handelChange}></input>
+        <button onClick={addcourse}>Add Course</button>
+      </div>
+      <div className='list'>
+        {courseList.map((course)=>{
+          return <h1>{course}</h1>
+        })}
+      </div>
     </div>
   )
 }
