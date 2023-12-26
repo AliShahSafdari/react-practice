@@ -11,10 +11,7 @@ function App() {
     setCourseList([...courseList, newCourse]);
   }
   const deleteCourse = (courseName)=>{
-   const newCourseList=  courseList.filter((course) =>{
-    if(course === courseName) return false;
-    else return true;
-   })
+   const newCourseList=  courseList.filter((course) =>{return courseName !==course})
    setCourseList(newCourseList);
   }
   return (
