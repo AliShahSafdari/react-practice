@@ -3,17 +3,15 @@ import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import { About } from './Pages/About';
 import { Home } from './Pages/Home';
 import { Contact } from './Pages/Contact copy';
+import { NavBar } from './Pages/NavBar';
 function App() {
 
   return (
     <div className='App'>
        <Router>
         <div>SarvinStyle</div>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
-        </nav>
+        <NavBar/>
+
         <Routes>
           <Route path="/" element= {<Home/>}/>
           <Route path="/about" element= {<About/>}/>
