@@ -20,6 +20,7 @@ function App() {
           <Route path="/profile/:name?" element= {<Profile/>}/>
           <Route path="*" element={<div>Not Found</div>}/>
         </Routes>
+        <div>This is footer</div>
        </Router>
     </div>
   )
